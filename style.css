@@ -1,46 +1,62 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
- body {
-       font-family: Arial, sans-serif;
-       background-color: #f4f4f4;
-       text-align: center;
- }
-  
- nav {
-    background-color: #d374a8;
-    padding: 10px 0;
- }
+body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+}
  
- nav ul {
-    list-style: none;
-    padding: 0;
- }
- 
- nav ul li{
-    display: inline-block;
-    position: relative;
-    margin: 0 15px;
- }
+nav {
+   display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: #450920;
+   padding: 14px 0;
+}
 
- nav ul li a
- {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    padding: 10px 15px;
-    background: #d374a8;
-    border-radius: 5px;
- }
+nav ul {
+   list-style: none;
+   padding: 0;
+}
 
- nav ul li a:hover {
-    background-color: #dd4699;
- }
+nav ul li{
+   display: inline-block;
+   position: relative;
+   margin: 0 15px;
+}
 
- .menu{
-      border: none;
-      border-radius: 30px;
-   padding: 5px;
- }
+nav ul li a
+{
+   text-decoration: none;
+   color: white;
+   font-size: 18px;
+   padding: 10px 15px;
+   background: #450920;
+   border-radius: 5px;
+}
+
+nav ul li a:hover {
+   background-color: #dd4699;
+}
+
+.logo-head{
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.menu{
+     border: none;
+     border-radius: 30px;
+     padding: 5px;
+}
+
+
+.section1{
+      display: flex;
+      width: 100vw;
+      height: 30vw;
+}
