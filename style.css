@@ -4,6 +4,7 @@
    box-sizing: border-box;
 }
 body {
+     
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       text-align: center;
@@ -11,15 +12,18 @@ body {
  
 nav {
    display: flex;
-    justify-content: center;
-    align-items: center;
+   justify-content: space-around;
+   align-items: center;
+   margin: 0 auto;
+
+   
    background-color: #450920;
-   padding: 14px 0;
 }
 
 nav ul {
    list-style: none;
    padding: 0;
+   margin: 1.5em;
 }
 
 nav ul li{
@@ -43,15 +47,15 @@ nav ul li a:hover {
 }
 
 .logo-head{
-  position: relative;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
+
 }
 
-.menu{
+.menu-pesquisa{
      border: none;
      border-radius: 30px;
-     padding: 5px;
+     padding: 7px;
 }
 
 
