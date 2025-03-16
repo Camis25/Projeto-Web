@@ -11,28 +11,31 @@
 </head>
 <body> 
     <div class="tela-login">
-        <form>
-            <h1>Faça seu login!</h1>
-            <div>
-                <input placeholder="E-mail" type="email" id="txtEmail" name="txtEmail" required>
-                <i class="bx bxs-user"></i>
+        
+        <div class="formulario">
+            <form>
+                <h1>Bem-Vinda</h1>
+                <div>
+                    <input placeholder="E-mail" type="email" id="txtEmail" name="txtEmail" required>
+                    <i class="bx bxs-user"></i>
+    
+                </div>
+                <div>
+                    <input placeholder="Senha" type="password" id="txtSenha" name="txtSenha" required>
+                    <i class="bx bxs-lock alt"></i>
+                </div>
+    
+                <div class="esqueci-senha">
+                        <a href="#">Esqueci minha senha</a>
+                </div>
+                <button onclick="loginUsuario()" type="button" id="btnEnviar">Acessar</button>
 
+                <div class="registro">
+                    <p>Não tem uma conta? <a href="#"> Cadastra-se</a></p>
             </div>
-            <div>
-                <input placeholder="Senha" type="password" id="txtSenha" name="txtSenha" required>
-                <i class="bx bxs-lock alt"></i>
-            </div>
-
-            <div class="esqueci-senha">
-                    <a href="#">Esqueci minha senha</a>
-            </div>
-            <input onclick="loginUsuario()" type="button" value="Enviar Solicitação"  id="btnEnviar">
-        </form>
-
-        <div class="registro">
-                <p>Não tem uma conta? <a href="#"> Cadastra-se</a></p>
+            </form>
+           
         </div>
-
     </div>
     
 </body>
