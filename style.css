@@ -82,7 +82,7 @@ nav ul li a:hover {
 }
 
 .h1-sections{
-   color: rgb(185, 89, 89);
+   color: #843e3e;
    font-size: 28px;
    
 }
@@ -103,6 +103,10 @@ nav ul li a:hover {
    border-radius: 20px;
   
    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+
+   h2{
+      color: #843e3e;
+   }
 }
 
 .img-cards{
@@ -125,7 +129,7 @@ nav ul li a:hover {
 .btn-card{
    padding: 8px 15px;
    border-radius: 16px;
-   background-color: rgb(185, 89, 89);
+   background-color: #b95959;
    color: #ffff;
    border: none;
    margin-top: 1em;
@@ -134,9 +138,38 @@ nav ul li a:hover {
 .section3{
   
    height: 90vh;
-   background-color: #ffff;
+   background-color: #dfb9b9;
    padding: 3em;
+
+
 }
+
+
+.comentarios{
+   display: flex;
+   flex-direction: column;
+
+   background-color: #b95959;
+   color: #ffff;
+   margin: 2em;
+   padding: 2em;
+
+   border-radius: 20px;
+}
+
+.comentario-format{
+   flex-direction: column;
+   text-align: left;
+
+   p{
+      margin: 5px;
+   }
+}
+
+.ver-respostas{
+   text-align: right;
+}
+
 .rodape{
    background-color: #b95959;
    height: 40vh;
