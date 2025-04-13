@@ -1,0 +1,27 @@
+.rodape{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #b95959;
+    height: 40vh;
+    color: #ffff;
+ 
+    div{
+       text-align: left;
+       
+       h1{
+          padding-top: 10px;
+          font-size: 20px;
+       }
+       p{
+          padding-top: 10px;
+       }
+    }
+ 
+    img{
+       width: 120px;
+       height: 120px;
+    }
+ }
+ 
+ 

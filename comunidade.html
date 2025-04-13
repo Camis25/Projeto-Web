@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/CSS/comunidade.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header"></div>
+    <script>
+        fetch('navbar_header.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+    </script>
+
+    <section class="section1"></section>
+
+    <section class="section2">
+        <div class="comunidade-cards">
+            <p class="user-name">Camile</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. </p>
+                <p><a href="#">Ver respostas</a></p>
+        </div>
+
+        <div class="comunidade-cards">
+            <p class="user-name">Camile</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. </p>
+                <p><a href="#">Ver respostas</a></p>
+        </div>
+
+        <div class="comunidade-cards">
+            <p class="user-name">Camile</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. </p>
+                <p><a href="#">Ver respostas</a></p>
+
+        </div>
+
+        <div class="comunidade-cards">
+            <p class="user-name">Camile</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. </p>
+                <p><a href="#">Ver respostas</a></p>
+        </div>
+       
+    </section>
+
+   
+
+    <div id="footer"></div>
+
+    <script>
+        fetch('navbar_footer.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        });
+    </script>
+    
+
+
+    
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/CSS/artigos.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header"></div>
+    <script>
+        fetch('navbar_header.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+    </script>
+
+    <section class="section1"></section>
+
+    <section class="section2">
+        <div class="filtro">
+            <h1>Filtar por tema:</h1>
+            <select>
+                <option>Selecione</option>
+                <option>Filtro 1</option>
+                <option>Filtro 2</option>
+                <option>Filtro 3</option>
+            </select>
+        </div>
+
+        <div class="section2-cards">
+            <div class="card-1">
+                <div>
+                    <img class="img-cards" src="./Assets/img/Gravida.avif">
+                    <div class="info-cards">
+                        <h2>Gravidez</h2>
+                        <button class="btn-card">Leia mais</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="card-1">
+                <div>
+                    <img class="img-cards" src="./Assets/img/utero.jpg">
+                    <div class="info-cards">
+                        <h2>Fases do Ciclo Menstrual</h2>
+                        <button class="btn-card">Leia mais</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="card-1">
+                <div>
+                    <img class="img-cards" src="./Assets/img/metodos.jpg">
+                    <div class="info-cards">
+                        <h2>Métodos Contraceptivos</h2>
+                        <button class="btn-card">Leia mais</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+
+    </section>
+    <div id="footer"></div>
+
+    <script>
+        fetch('navbar_footer.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        });
+    </script>
+    
+
+    
+</body>
+</html>

@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página inicial</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./Assets/CSS/style.css">
 </head>
 <body>
-    <nav>
-        <!-- <img class="logo-head" src="./img/Bem - Estar (1).png"> -->
-        <ul>
-            <li><a href="#">Artigos</a></li>
-            <input class="menu-pesquisa" placeholder="Pesquise"/>
-            <li><a href="#">Comunidade</a></li>
-            <li><a href="./login.html">Entrar</a></li>
-            <li><a href="#">Cadastra-se</a></li>
-
-        </ul>
-    </nav>
+    <div id="header"></div>
+    <script>
+        fetch('navbar_header.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+    </script>
+    
 
     <section class="section1"></section>
 
@@ -27,7 +25,7 @@
         <div class="section2-cards">
             <div class="card-1">
                 <div>
-                    <img class="img-cards" src="./img/Gravida.avif">
+                    <img class="img-cards" src="./Assets/img/Gravida.avif">
                     <div class="info-cards">
                         <h2>Gravidez</h2>
                         <button class="btn-card">Leia mais</button>
@@ -37,7 +35,7 @@
     
             <div class="card-1">
                 <div>
-                    <img class="img-cards" src="./img/10515279.jpg">
+                    <img class="img-cards" src="./Assets/img/utero.jpg">
                     <div class="info-cards">
                         <h2>Fases do Ciclo Menstrual</h2>
                         <button class="btn-card">Leia mais</button>
@@ -47,7 +45,7 @@
     
             <div class="card-1">
                 <div>
-                    <img class="img-cards" src="./img/4546783.jpg">
+                    <img class="img-cards" src="./Assets/img/metodos.jpg">
                     <div class="info-cards">
                         <h2>Métodos Contraceptivos</h2>
                         <button class="btn-card">Leia mais</button>
@@ -86,9 +84,13 @@
             </div>            
         </div>
     </section>
-
-    <section class="rodape">
-    </section>
-  
+    <div id="footer"></div>
+    <script>
+        fetch('navbar_footer.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        });
+    </script>
 </body>
 </html>
