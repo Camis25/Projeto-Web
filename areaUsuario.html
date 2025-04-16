@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/CSS/areaUsuario.css">
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="header"></div>
+    <script>
+        fetch('headerUsuario.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+    </script>
+
+    </section>
+
+    <section class="areaUsuario">
+        <h2>Posts recentes</h2>
+        <div class="posts">
+            <a>Ver detalhes</a>
+        </div>
+
+        <div class="posts">
+            <a>Ver detalhes</a>
+        </div>
+        
+    </section>
+    
+</body>
+</html>
