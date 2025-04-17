@@ -6,12 +6,15 @@ const PORT = 3000;
 app.use(cors());
 
 const mensagens = [
-        "Hidrate-se bem durante o dia para manter a pele saudável.",
-        "Reserve 10 minutos do seu dia para meditar e relaxar.",
-        "Faça caminhadas leves durante a manhã para um bom início de dia.",
-        "Beba pelo menos 2 litros de água por dia.",
-        "Durante a TPM, pratique atividades leves como caminhada ou yoga.",
-        "Você é mais forte do que imagina."
+        "A força de uma mulher reside na capacidade de enfrentar desafios com coragem e determinação.",
+        "Mulher forte é aquela que encontra força na dor e coragem nas adversidades.",
+        "Empodere-se e não permita que ninguém defina seus limites, você é capaz de tudo!",
+        "Acredite no seu potencial, pois você possui dentro de si todas as ferramentas para vencer.",
+        "Seja a protagonista da sua própria história e escreva um enredo de sucesso e superação.",
+        "Você é mais forte do que imagina.",
+        "A autoconfiança é a armadura que toda mulher forte carrega consigo.",
+        "Não tema o fracasso, ele é apenas uma oportunidade de aprender e crescer.",
+        "A verdadeira beleza de uma mulher está na sua determinação em ser autêntica."
 ];
 
 app.get('/mensagens', (req, res) => {
