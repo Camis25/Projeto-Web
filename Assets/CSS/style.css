@@ -95,23 +95,23 @@ body {
 .section3{
   
    height: 90vh;
-   background-color: #dfb9b9;
+   background-color: #ffffff;
    padding: 3em;
 
 
 }
 
-
 .comentarios{
    display: flex;
    flex-direction: column;
 
-   background-color: #b95959;
-   color: #ffff;
+   background-color: #FFEFD6;
+   color: #9c4d4d;
    margin: 2em;
    padding: 2em;
 
    border-radius: 20px;
+   box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.2);
 }
 
 .comentario-format{
@@ -121,12 +121,53 @@ body {
    p{
       margin: 5px;
    }
+
+   .nome{
+      font-weight: bold;
+      color: #9c4d4d;
+   }
+   
 }
 
 .ver-respostas{
    text-align: right;
+   
+   a{
+      font-weight: bold;
+      text-decoration: none;
+      color: #9c4d4d;
+   }
 }
 
-#quote{
-   height: 100vh;
+.mensagens{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+   width: 100%;
+   height: 40vh;
+   background-color: #FFEFD6;
+   
+   img{
+      margin: 2em;
+      width: 80px;
+      height: 80px;
+   }
+
+   .cotacao1{
+      position: relative;
+      bottom: 3em;
+   }
+   .cotacao2{
+      position: relative;
+      top: 3em;
+
+   }
+
+}
+
+
+#mensagem-dinamica{
+   color: #b95959;
+   font-size: 20px;
 }

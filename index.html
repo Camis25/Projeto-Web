@@ -10,10 +10,29 @@
     <div id="header"></div>
     <script>
         fetch('navbar_header.html')
-        .then(res => res.text())
-        .then(data => {
+            .then(res => res.text())
+            .then(data => {
             document.getElementById('header').innerHTML = data;
         });
+
+         fetch('navbar_footer.html')
+            .then(res => res.text())
+            .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        });
+
+        
+
+        fetch('http://localhost:3000/mensagens')
+            .then(res => res.json())
+            .then(data => {
+            document.getElementById('mensagem-dinamica').textContent = data.mensagem;
+        }) 
+        .catch(err => {
+            console.error('Sua mensagem não foi encontrada:', err);
+            document.getElementById('mensagem-dinamica').textContent = 'Não foi possível carregar a mensagem';
+        })
+
     </script>
     
 
@@ -45,7 +64,7 @@
     
             <div class="card-1">
                 <div>
-                    <img class="img-cards" src="./Assets/img/metodos.jpg">
+                    <img class="img-cards" src="./Assets/img/metodosContraceptivos.png">
                     <div class="info-cards">
                         <h2>Métodos Contraceptivos</h2>
                         <button class="btn-card">Leia mais</button>
@@ -57,12 +76,17 @@
         </div>
 
     </section>
+    <section class="mensagens">
+        <img class="cotacao1" src="./Assets/img/cotacao (2).png">
+        <div id="mensagem-dinamica"></div>
+        <img class="cotacao2" src="./Assets/img/cotacao (1).png">
+    </section>
 
     <section class="section3">
         <h1 class="h1-sections">Comunidade</h1>
         <div class="comentarios">
             <div class="comentario-format">
-                <p>Camile</p>
+                <p class="nome">Camile</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat. </p>
@@ -72,9 +96,12 @@
             </div>            
         </div>
 
+        
+        
+
         <div class="comentarios">
             <div class="comentario-format">
-                <p>Camile</p>
+                <p class="nome">Camile</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat. </p>
@@ -83,14 +110,10 @@
                 <a href="#">Ver respostas</a>
             </div>            
         </div>
+          
     </section>
+   
     <div id="footer"></div>
-    <script>
-        fetch('navbar_footer.html')
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById('footer').innerHTML = data;
-        });
-    </script>
+    
 </body>
 </html>
