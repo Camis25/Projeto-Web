@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./../Assets/CSS/login.css">
+
+    <title>Cadastro usuário</title>
+</head>
+<body> 
+    <div class="tela-login">
+        
+        <div class="formulario">
+            <form id="formCadastro">
+                <h1>Cadastra-se</h1>
+                <div>
+                    <input placeholder="Username" type="text" id="txtUserName" name="txtUserName"  required>
+                    <i class="bx bxs-user"></i>
+                </div>
+                <div class="nascimento">
+                    <input placeholder="Data de Nascimento" type="date" id="dtNasc" name="dtNasc"  required>
+                    <i class='bx bx-calendar'></i>
+                </div>
+                <div>
+                    <input placeholder="E-mail" type="email" id="txtEmail" name="txtEmail" required>
+                    <i class='bx bx-envelope'></i>
+                </div>
+                <div>
+                    <input placeholder="Senha" type="password" id="txtSenha" name="txtSenha" required>
+                    <i class="bx bxs-lock alt"></i>
+                </div>
+                 <div>
+                    <p>Palavra-chave para recuperação de senha</p>
+                    <input placeholder="Palavra-chave" type="text" id="txtChave" name="txtChave"  required>
+                    <i class="bx bxs-user"></i>
+                </div>
+                <button onclick="cadastroUsuario()" type="button" id="btnEnviar">Cadastrar</button>
+            </form>
+           
+        </div>
+    </div>
+    <script src="./../Assets/JavaScript/script.js"></script>
+</body>
+</html>

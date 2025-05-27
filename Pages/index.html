@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página inicial</title>
-    <link rel="stylesheet" href="./Assets/CSS/style.css">
+    <link rel="stylesheet" href="./../Assets/CSS/style.css">
+    <link  rel="stylesheet" href="./../Assets/CSS/navbar_header.css">
+    <link rel="stylesheet" href="./../Assets/CSS/navbar_footer.css">
+
 </head>
 <body>
     <div id="header"></div>
+    <nav class="navbar-header">
+    <a href="./index.html">    
+        <img class="logo-head" src="./../Assets/img/Bem - Estar.png"> 
+    </a>
+    <ul>
+        <li><a href="./artigos.html">Artigos</a></li>
+        <li><a href="./comunidade.html">Comunidade</a></li>
+        <li><a href="./login.html">Entrar</a></li>
+        <li><a href="./cadastroUser.html">Cadastra-se</a></li>
+
+    </ul>
+</nav>
     <script>
-        fetch('navbar_header.html')
-            .then(res => res.text())
-            .then(data => {
-            document.getElementById('header').innerHTML = data;
-        });
-
-         fetch('navbar_footer.html')
-            .then(res => res.text())
-            .then(data => {
-            document.getElementById('footer').innerHTML = data;
-        });
-
-        
-
         fetch('http://localhost:3000/mensagens')
             .then(res => res.json())
             .then(data => {
@@ -44,7 +45,7 @@
         <div class="section2-cards">
             <div class="card-1">
                 <div>
-                    <img class="img-cards" src="./Assets/img/Gravida.avif">
+                    <img class="img-cards" src="./../Assets/img/Gravida.avif">
                     <div class="info-cards">
                         <h2>Gravidez</h2>
                         <button class="btn-card">Leia mais</button>
@@ -54,7 +55,7 @@
     
             <div class="card-1">
                 <div>
-                    <img class="img-cards" src="./Assets/img/utero.jpg">
+                    <img class="img-cards" src="./../Assets/img/utero.jpg">
                     <div class="info-cards">
                         <h2>Fases do Ciclo Menstrual</h2>
                         <button class="btn-card">Leia mais</button>
@@ -64,7 +65,7 @@
     
             <div class="card-1">
                 <div>
-                    <img class="img-cards" src="./Assets/img/metodosContraceptivos.png">
+                    <img class="img-cards" src="./../Assets/img/metodosContraceptivos.png">
                     <div class="info-cards">
                         <h2>Métodos Contraceptivos</h2>
                         <button class="btn-card">Leia mais</button>
@@ -77,9 +78,9 @@
 
     </section>
     <section class="mensagens">
-        <img class="cotacao1" src="./Assets/img/cotacao (2).png">
+        <img class="cotacao1" src="./../Assets/img/cotacao (2).png">
         <div id="mensagem-dinamica"></div>
-        <img class="cotacao2" src="./Assets/img/cotacao (1).png">
+        <img class="cotacao2" src="./../Assets/img/cotacao (1).png">
     </section>
 
     <section class="section3">
@@ -112,8 +113,25 @@
         </div>
           
     </section>
+
+    <footer class="rodape">
+    <div>
+        <h1>Acesso rápido</h1>
+        <p><a>Artigos</a></p>
+        <p><a>Comunidade</a></p>
+    </div>
+
+    <div>
+        <img src="./../Assets/img/Bem - Estar.png">
+    </div>
+
+    <div>
+        <p><a>Política de Privacidade</a></p>
+        <p><a>Termos e Condições</a></p>
+    </div>
+</footer>
    
-    <div id="footer"></div>
+   
     
 </body>
 </html>

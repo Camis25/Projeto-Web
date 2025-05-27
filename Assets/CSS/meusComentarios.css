@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Poppins", serif;
+}
+
+body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      text-align: center;
+
+      margin-top: 0px;
+  
+
+}
+
+.comentarios{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 2em;
+}
+
+.card-elementos{
+    display: flex;
+   
+    .curtidas{
+        width: 30px;
+        height: 30px;
+
+        position: relative;
+        bottom: 3px;
+        z-index: -1;
+    }
+
+}
+
+ .filtro{
+         display: flex;
+         justify-content: center;
+
+         h1{
+            font-size: 20px;
+         }
+
+         select{
+            margin-left: 1em;
+            background-color: #dddbdb;
+            border: none;
+            color: #616060;
+            width: 200px;
+            border-radius: 20px;
+            padding-left: 10px;
+         }
+ }
+
+ .section2-cards{
+   display: flex;
+   flex-wrap: wrap;
+
+ }
+ 
+ .h1-sections{
+    color: #843e3e;
+    font-size: 28px;
+    
+ }
+
+
+ 
+
+ .section2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+
+    justify-content: center;
+    flex-direction: row;
+  
+    width: 100%;
+    height: auto;
+    background-color: #ffff;
+
+    padding: 2em;
+    padding-top: 6em;
+   
+    
+
+    .comunidade-cards{
+        background-color:#b95959;
+        width: 500px;
+        padding: 2em;
+        text-align: left;
+        border-radius: 20px;
+        color: #ffff;
+        margin: 1em;
+
+         a{
+            display: flex;
+            justify-content: end;
+         }
+    }
+ }
+ 
