@@ -277,57 +277,6 @@ function listarArtigos(filtroTema = "") {
     });
 }
 
-function editarArtigo(index) {
-    const artigos = JSON.parse(localStorage.getItem("artigos")) || [];
-    const artigo = artigos[index];
-
-    const novoTitulo = prompt("Edite o título:", artigo.titulo);
-    const novoConteudo = prompt("Edite o conteúdo:", artigo.conteudo);
-    const novoTema = prompt("Edite o tema:", artigo.tema);
-
-    const desejaAlterarImagem = confirm("Deseja alterar a imagem?");
-
-    if (desejaAlterarImagem) {
-        const inputImagem = document.createElement("input");
-        inputImagem.type = "file";
-        inputImagem.accept = "image/*";
-
-        inputImagem.onchange = function (event) {
-            const file = event.target.files[0];
-            const reader = new FileReader();
-
-            reader.onload = function (e) {
-                const novaImagemBase64 = e.target.result;
-
-                artigo.titulo = novoTitulo || artigo.titulo;
-                artigo.conteudo = novoConteudo || artigo.conteudo;
-                artigo.tema = novoTema || artigo.tema;
-                artigo.imagem = novaImagemBase64;
-
-                artigos[index] = artigo;
-                localStorage.setItem("artigos", JSON.stringify(artigos));
-                listarArtigos();
-                alert("Artigo editado com sucesso!");
-            };
-
-            if (file) {
-                reader.readAsDataURL(file);
-            }
-        };
-
-        inputImagem.click();
-    } else {
-        artigo.titulo = novoTitulo || artigo.titulo;
-        artigo.conteudo = novoConteudo || artigo.conteudo;
-        artigo.tema = novoTema || artigo.tema;
-
-        artigos[index] = artigo;
-        localStorage.setItem("artigos", JSON.stringify(artigos));
-        listarArtigos();
-        alert("Artigo editado com sucesso!");
-    }
-}
-
 
 
 
