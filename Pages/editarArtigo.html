@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./../Assets/CSS/novoArtigo.css">
+    <title>Editar Artigo</title>
+</head>
+<body>
+
+    <h1>Editar Artigo</h1>
+    <form id="formEditarArtigo">
+        <label for="tituloArtigo">Título:</label><br>
+        <input type="text" id="tituloArtigo"/><br><br>
+
+        <label for="tema">Tema:</label><br>
+            <select id="tema" name="tema">
+            <option value="" disabled selected>Selecione um tema</option>
+            <option value="alimentacao">Alimentação Saudável</option>
+            <option value="exercicio">Exercícios Físicos</option>
+            <option value="saude_mental">Saúde Mental</option>
+            <option value="sono">Qualidade do Sono</option>
+            <option value="meditacao">Meditação e Relaxamento</option>
+            <option value="higiene">Higiene Pessoal</option>
+            <option value="prevenção">Prevenção de Doenças</option>
+            <option value="nutricao">Nutrição e Suplementos</option>
+            <option value="gestao_stress">Gestão do Estresse</option>
+            <option value="saude_emocional">Saúde Emocional</option>
+        </select><br><br>
+
+      <label for="imagemArtigoFile">Imagem</label><br>
+        <input type="file" id="imagemArtigoFile" accept="image/*" /><br><br>
+        <img id="previewImagem" src="" alt="Imagem atual do artigo" style="max-width: 300px; display: none;" /><br><br>
+
+        <label for="artigo">Conteúdo:</label><br>
+        <textarea id="artigo" rows="6"></textarea><br><br>
+
+        <button type="submit">Salvar Artigo</button>
+    </form>
+
+    
+
+    <script src="../Assets/JavaScript/artigo.js">carregarArtigoParaEditar()</script>
+
+</body>
+</html>

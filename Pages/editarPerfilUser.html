@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Assets/CSS/areaUsuario.css">
-    <link rel="stylesheet" href="./Assets/CSS/headerArea.css">
+    <link rel="stylesheet" href="./../Assets/CSS/areaUsuario.css">
+    <link rel="stylesheet" href="./../Assets/CSS/headerArea.css">
 
 
     <title>Document</title>
@@ -16,13 +16,12 @@
     <div id="header"></div>
     
     <nav class="navbar-header">
-        <img class="logo-head" src="./Assets/img/Bem - Estar.png">
+        <img class="logo-head" src="../Assets/img/Bem - Estar.png">
 
         <ul>
-            <li><a href="/areaUsuario">Perfil</a></li>
-            <li><a href="/meusComentarios">Meus Comentários</a></li>
-            <li><a href="/artigosUser">Artigos</a></li>
-            <li><a href="/comunidadeUser">Comunidade</a></li>
+            <li><a href="./areaUsuario.html">Perfil</a></li>
+            <li><a href="./artigosUser.html">Artigos</a></li>
+            <li><a href="./comunidadeUser.html">Comunidade</a></li>
             <li><a href="/index.html">Sair</a></li>
 
         </ul>
@@ -36,7 +35,8 @@
                     <h1>Dados Pessoais</h1>
                 </div>
                 <div class="user">
-                    <img src="./Assets/img/imagem-do-usuario-com-fundo-preto.png">
+                    <img id="random-photo" alt="Foto aleatória do Unsplash" style="width: 300px; height: auto;">
+
                     <p>Meu usuário</p>
                 </div>
 
@@ -45,33 +45,28 @@
 
             <div>
                 <div class="dados">
-                    <p>Nome</p>
-                    <input>
+                    <p>Username</p>
+                    <input type="text" id="userName">
                 </div>
 
                 <div class="dados">
-                    <p>Apelido</p>
-                    <input>
+                    <p>E-mail</p>
+                    <input type="email" id="email">
                 </div>
             </div>
 
             <div>
                 <div class="dados">
-                    <p>Nome</p>
-                    <input>
-                </div>
-
-                <div class="dados">
-                    <p>Apelido</p>
-                    <input>
+                    <p>Data de Nascimento</p>
+                    <input type="date" id="nascimento">
                 </div>
             </div>
+            <button onclick="salvarEdicao()">Salvar alterações</button>
 
-            <div>
-                <button>Salvar</button>
-                <button>Descartar alterações</button>
-            </div>
+
     </section>
+<script src="../Assets/JavaScript/script.js"></script>
+<script src="../Assets/JavaScript/scriptUser.js"></script>
 
 </body>
 

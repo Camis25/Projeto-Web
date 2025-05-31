@@ -64,6 +64,7 @@ body {
 .card-1:hover {
    transform: scale(1.05);
    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    cursor: pointer;
  }
 
 .img-cards{
@@ -90,7 +91,15 @@ body {
    color: #ffff;
    border: none;
    margin-top: 1em;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
+
+.btn-card:hover {
+   transform: scale(1.05);
+   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+   cursor: pointer;
+ }
 
 .section3{
   
@@ -165,6 +174,7 @@ body {
    }
 
 }
+
 
 
 #mensagem-dinamica{

@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* Imagem de topo */
+.section1 {
+    background-image: url('./../img/Comunidade.png');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+}
+
+/* Container geral */
+.section2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 2em;
+}
+
+#comentariosUsuarioLogado {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5em;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+.comentario-usuario {
+    background-color: #b95959;
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comentario-usuario:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.comentario-usuario p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.comentario-usuario strong {
+    font-weight: 600;
+}
+
+.data-comentario {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 10px;
+}

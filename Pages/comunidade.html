@@ -3,70 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../Assets/CSS/style.css">
+    <link  rel="stylesheet" href="../Assets/CSS/navbar_header.css">
+    <link  rel="stylesheet" href="../Assets/CSS/navbar_footer.css">
+    <link  rel="stylesheet" href="../Assets/CSS/comunidade.css">
+
+
     <title>Document</title>
 </head>
 <body>
-    <div id="header"></div>
-    <script>
-        fetch('navbar_header.html')
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
-        });
-    </script>
+     <nav class="navbar-header">
+        <a href="./index.html">    
+            <img class="logo-head" src="../Assets/img/Bem - Estar.png"> 
+        </a>
+        <ul>
+            <li><a href="./artigos.html">Artigos</a></li>
+            <li><a href="./comunidade.html">Comunidade</a></li>
+            <li><a href="./login.html">Entrar</a></li>
+            <li><a href="./cadastroUser.html">Cadastra-se</a></li>
 
+        </ul>
+    </nav>
+   
     <section class="section1"></section>
+        <section class="section2">
+            <div class="section2-cards-comunidade" id="comunidadeFavoritos"></div>
+    </section>
 
-    <section class="section2">
-        <div class="comunidade-cards">
-            <p class="user-name">Camile</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. </p>
-                <p><a href="#">Ver respostas</a></p>
+
+    <section>
+         <footer class="rodape">
+        <div>
+            <h1>Acesso rápido</h1>
+            <p><a href="./artigos.html">Artigos</a></p>
+            <p><a href="./comunidade.html">Comunidade</a></p>
         </div>
 
-        <div class="comunidade-cards">
-            <p class="user-name">Camile</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. </p>
-                <p><a href="#">Ver respostas</a></p>
+        <div class="copy">
+            <img src="../Assets/img/Bem - Estar.png">
+            &copy; Todos os direitos reservados.
         </div>
 
-        <div class="comunidade-cards">
-            <p class="user-name">Camile</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. </p>
-                <p><a href="#">Ver respostas</a></p>
-
+        <div>
+            <p><a href="./politicaPrivacidade.html">Política de Privacidade</a></p>
+            <p><a href="./termos.html">Termos e Condições</a></p>
         </div>
+    </footer>
+   
 
-        <div class="comunidade-cards">
-            <p class="user-name">Camile</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. </p>
-                <p><a href="#">Ver respostas</a></p>
-        </div>
-       
+
     </section>
 
    
-
-    <div id="footer"></div>
-
-    <script>
-        fetch('navbar_footer.html')
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById('footer').innerHTML = data;
-        });
-    </script>
-    
-
+   
+<script src="./../Assets/JavaScript/artigo.js"></script>
 
     
 </body>

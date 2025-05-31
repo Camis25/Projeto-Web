@@ -68,3 +68,28 @@ section{
 
 }
 
+#random-photo{
+   border-radius: 100%;
+   max-height: 120px;
+   max-width: 120px;
+   min-height: 120px;
+   min-width: 120px;
+}
+
+.medica{
+   width: 100px;
+   height: 180px;
+}
+
+button{
+   background-color: #b95959;
+   color: #ffffff;
+   padding: 0.5em 1em;
+   border-radius: 20px;
+   border: none;
+}
+
+button:hover{
+   cursor: pointer;
+   background-color: #9c4a4a;
+}

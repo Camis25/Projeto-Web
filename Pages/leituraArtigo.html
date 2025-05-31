@@ -3,25 +3,58 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link  rel="stylesheet" href="../Assets/CSS/leituraArtigo.css">
+
     <title>Leitura do Artigo</title>
    
 </head>
 <body>
+    <nav class="navbar-header">
+        <img class="logo-head" src="../Assets/img/Bem - Estar.png"> 
+    
+</nav>
+<section class="leituraArtigo">
+    <div class="div-1">
+        <div class="div-2">
+            <img id="imagemArtigo" src="" alt="Imagem do artigo" />
+        </div>
 
-    <h1 id="tituloArtigo"></h1>
-    <p class="data-artigo" id="dataArtigo"></p>
-    <img id="imagemArtigo" src="" alt="Imagem do artigo" />
-    <div id="conteudoArtigo"></div>
+        <div class="div-3">
+            <h1 id="tituloArtigo"></h1>
+            <p id="temaArtigo"></p>
+            <p class="data-artigo" id="dataArtigo"></p>
+        </div>
+    </div>
 
-    <button onclick="voltar()">Voltar para lista</button>
+     <div class="div-4">
+        <div id="conteudoArtigo"></div>
+    </div>
 
-    <div class="comentarios-section">
+   <div class="div-5">
+  <div class="div-6 comentarios-section">
     <h3>Comentários</h3>
+    
     <textarea id="novoComentario" rows="3" placeholder="Escreva seu comentário..."></textarea><br>
     <button onclick="adicionarComentario()">Enviar comentário</button>
-
+    
     <div id="listaComentarios"></div>
-<script src="../Assets/JavaScript/script.js"></script>
+  </div>
+</div>
+
+   
+   
+           
+        
+
+    
+
+
+
+
+</section>
+
+    
+<script src="../Assets/JavaScript/artigo.js"></script>
 
 </body>
 </html>

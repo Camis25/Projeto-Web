@@ -16,14 +16,13 @@
     <div id="header"></div>
     
     <nav class="navbar-header">
-        <img class="logo-head" src="./Assets/img/Bem - Estar.png">
+        <img class="logo-head" src="../Assets/img/Bem - Estar.png">
 
         <ul>
             <li><a href="./areaUsuario.html">Perfil</a></li>
-            <li><a href="./meusComentarios.html">Meus Comentários</a></li>
             <li><a href="./artigosUser.html">Artigos</a></li>
             <li><a href="./comunidadeUser.html">Comunidade</a></li>
-            <li><a href="/index.html">Sair</a></li>
+            <li><a onclick="logoutUsuario()">Sair</a></li>
 
         </ul>
 
@@ -36,7 +35,8 @@
                     <h1>Dados Pessoais</h1>
                 </div>
                 <div class="user">
-                    <img src="./Assets/img/imagem-do-usuario-com-fundo-preto.png">
+                    <img id="random-photo" alt="Foto aleatória do Unsplash" style="width: 300px; height: auto;">
+
                     <p>Meu usuário</p>
                 </div>
 
@@ -60,10 +60,15 @@
                     <p>Data de Nascimento</p>
                     <p>-</p>
                 </div>
+                <div class="dados">
+                    <button onclick="editar()">Editar</button>
+                </div>
             </div>
 
     </section>
 <script src="../Assets/JavaScript/script.js"></script>
+<script src="../Assets/JavaScript/scriptUser.js"></script>
+
 </body>
 
 </html>

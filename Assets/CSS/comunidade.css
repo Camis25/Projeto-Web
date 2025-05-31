@@ -26,16 +26,7 @@ body {
    margin: 0;
 }
 
-.section2{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  
-    height: auto;
-    width: 100%;
-    background-color: #ffff;
-    padding: 4em;
- }
+
 
  .filtro{
          display: flex;
@@ -56,11 +47,7 @@ body {
          }
  }
 
- .section2-cards{
-   display: flex;
-   flex-wrap: wrap;
-
- }
+ 
  
  .h1-sections{
     color: #843e3e;
@@ -68,53 +55,57 @@ body {
     
  }
  
-
- .section2{
+.section2 {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    
-
-    .comunidade-cards{
-        background-color:#b95959;
-        width: 500px;
-        padding: 2em;
-        text-align: left;
-        border-radius: 20px;
-        color: #ffff;
-        margin: 1em;
-
-         a{
-            display: flex;
-            justify-content: end;
-         }
-    }
- }
- 
- 
- .rodape{
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   background-color: #b95959;
-   height: 40vh;
-   color: #ffff;
-
-   div{
-      text-align: left;
-      
-      h1{
-         padding-top: 10px;
-         font-size: 20px;
-      }
-      p{
-         padding-top: 10px;
-      }
-   }
-
-   img{
-      width: 120px;
-      height: 120px;
-   }
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 2em;
 }
 
+
+.comentario-favorito {
+    background-color: #b95959;
+    justify-content: center;
+    align-content: center;
+    text-align: start;
+    width: 400px;
+    height: 200px;
+   padding: 20px;
+    border-radius: 20px;
+    color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+}
+
+.comentario-favorito:hover {
+   transform: scale(1.05);
+   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+ }
+
+.section2-cards-comunidade {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+    
+
+.user-name{
+   position: relative;
+   bottom: 2em;
+}
+
+.comentario{
+   position: relative;
+   bottom: 1.5em;
+}
+
+.data{
+   position: relative;
+   top: 3em;
+}

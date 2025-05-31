@@ -3,76 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Assets/CSS/artigos.css">
+    <link rel="stylesheet" href="../Assets/CSS/artigos.css">
+    <link  rel="stylesheet" href="../Assets/CSS/navbar_header.css">
+    <link  rel="stylesheet" href="../Assets/CSS/navbar_footer.css">
+
     <title>Document</title>
 </head>
 <body>
-    <div id="header"></div>
-    <script>
-        fetch('navbar_header.html')
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
-        });
-    </script>
+    
+   
+     <nav class="navbar-header">
+    <a href="../index.html">    
+        <img class="logo-head" src="../Assets/img/Bem - Estar.png"> 
+    </a>
+    <ul>
+        <li><a href="./artigos.html">Artigos</a></li>
+        <li><a href="./comunidade.html">Comunidade</a></li>
+        <li><a href="./login.html">Entrar</a></li>
+        <li><a href="./cadastroUser.html">Cadastra-se</a></li>
 
+    </ul>
+</nav>
+    
     <section class="section1"></section>
 
     <section class="section2">
         <div class="filtro">
             <h1>Filtar por tema:</h1>
-            <select>
-                <option>Selecione</option>
-                <option>Filtro 1</option>
-                <option>Filtro 2</option>
-                <option>Filtro 3</option>
-            </select>
+        <select id="tema" name="tema" onchange="filtrarPorTema()">
+            <option value="">Selecione um tema</option>
+            <option value="alimentacao">Alimentação Saudável</option>
+            <option value="exercicio">Exercícios Físicos</option>
+            <option value="saude_mental">Saúde Mental</option>
+            <option value="sono">Qualidade do Sono</option>
+            <option value="meditacao">Meditação e Relaxamento</option>
+            <option value="higiene">Higiene Pessoal</option>
+            <option value="prevenção">Prevenção de Doenças</option>
+            <option value="nutricao">Nutrição e Suplementos</option>
+            <option value="gestao_stress">Gestão do Estresse</option>
+            <option value="saude_emocional">Saúde Emocional</option>
+        </select><br><br>
         </div>
-
-        <div class="section2-cards">
-            <div class="card-1">
-                <div>
-                    <img class="img-cards" src="./Assets/img/Gravida.avif">
-                    <div class="info-cards">
-                        <h2>Gravidez</h2>
-                        <button class="btn-card">Leia mais</button>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="card-1">
-                <div>
-                    <img class="img-cards" src="./Assets/img/utero.jpg">
-                    <div class="info-cards">
-                        <h2>Fases do Ciclo Menstrual</h2>
-                        <button class="btn-card">Leia mais</button>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="card-1">
-                <div>
-                    <img class="img-cards" src="./Assets/img/metodos.jpg">
-                    <div class="info-cards">
-                        <h2>Métodos Contraceptivos</h2>
-                        <button class="btn-card">Leia mais</button>
-                    </div>
-                </div>
-            </div>    
+            <section class="section2-cards"></section>
+       
         </div>
 
     </section>
-    <div id="footer"></div>
+    <footer class="rodape">
+    <div>
+        <h1>Acesso rápido</h1>
+        <p><a href="./artigos.html">Artigos</a></p>
+        <p><a href="./comunidade.html">Comunidade</a></p>
+    </div>
 
-    <script>
-        fetch('navbar_footer.html')
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById('footer').innerHTML = data;
-        });
-    </script>
-    
+    <div class="copy">
+        <img src="../Assets/img/Bem - Estar.png">
+         &copy; Todos os direitos reservados.
+    </div>
 
-    
+    <div>
+        <p><a href="./politicaPrivacidade.html">Política de Privacidade</a></p>
+        <p><a href="./termos.html">Termos e Condições</a></p>
+    </div>
+    </footer>
+
+        <script src="../Assets/JavaScript/scriptUser.js"></script>
+
 </body>
 </html>
