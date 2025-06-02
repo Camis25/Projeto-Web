@@ -20,6 +20,7 @@ body {
 
 section{
    display: flex;
+   flex-direction: column;
    height: 100vh;
    justify-content: center;
    align-items: center;
@@ -50,6 +51,10 @@ section{
 .titulo{
    position: relative;
    bottom:  1em;
+   
+   h1{
+      color: #9c4a4a;
+   }
 }
 
 .user{
@@ -92,4 +97,18 @@ button{
 button:hover{
    cursor: pointer;
    background-color: #9c4a4a;
+}
+
+
+input{
+   width: 250px;
+   padding: 5px;
+
+   border: 1px solid #DA627D;
+   border-radius: 10px;
+}
+
+.title{
+   font-weight: bold;
+   color: #773434;
 }

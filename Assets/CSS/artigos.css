@@ -77,6 +77,7 @@ body {
  }
  .card-1{
     margin:2em;
+    z-index: 10;
     
     height: 360px;
     width: 300px;
@@ -88,6 +89,13 @@ body {
     h2{
        color: #843e3e;
     }
+ }
+
+ 
+.card-1:hover {
+   transform: scale(1.05);
+   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    cursor: pointer;
  }
  
  .img-cards{
@@ -112,6 +120,7 @@ body {
       display: flex;
    
  }
+
  
  .btn-card{
     padding: 8px 15px;
@@ -120,8 +129,12 @@ body {
     color: #ffff;
     border: none;
     margin-top: 1em;
+       cursor: pointer;
+
     margin-right: 10px;
  }
+
+
 
  .btn-excluir{
       background-color: #ad2424;
@@ -132,6 +145,8 @@ body {
       border-radius: 5px;
       margin-top: 20px;
       margin-right: 5px;
+         cursor: pointer;
+
  }
 
   .btn-edit{
@@ -143,7 +158,10 @@ body {
       border-radius: 5px;
       margin-top: 20px;
       margin-right: 5px;
+      cursor: pointer;
  }
+
+ 
  
  .areaUsuario{
    display: flex;
@@ -158,4 +176,37 @@ body {
    color: #ffffff;
    padding: 10px 5px 10px 5px;
    border-radius: 20px;
+}
+
+.novoArtigo:hover{
+      background-color: #944a4a;
+      cursor: pointer;
+
+
+}
+.h1-filtrar{
+   color:#843e3e;
+}
+
+select {
+  appearance: none; 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: #dddbdb;
+  border: none;
+  color: #616060;
+  font-size: 14px;
+
+  padding: 10px 40px 10px 15px; 
+  border-radius: 20px; 
+  width: 200px;
+  cursor: pointer;
+  position: relative;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+
+  margin-bottom: 2em;
 }

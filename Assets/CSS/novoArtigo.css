@@ -14,14 +14,12 @@ body {
     color: #333;
 }
 
-/* Título principal */
 h1 {
     margin-bottom: 1.5em;
     font-size: 2em;
     color: #b95959;
 }
 
-/* Formulário principal */
 form#formArtigo {
     max-width: 600px;
     margin: 0 auto;
@@ -42,7 +40,6 @@ form#formEditarArtigo {
     text-align: left;
 }
 
-/* Labels */
 form label {
     font-weight: 500;
     display: block;
@@ -50,10 +47,7 @@ form label {
     color: #444;
 }
 
-/* Inputs, selects e textarea */
-input,
-select,
-textarea {
+input, select, textarea {
     width: 100%;
     padding: 10px;
     border-radius: 8px;
@@ -63,13 +57,11 @@ textarea {
     font-size: 1em;
 }
 
-/* Ajuste específico do textarea */
 textarea {
     height: 150px;
     resize: none;
 }
 
-/* Botão de envio */
 button[type="submit"] {
     width: 100%;
     padding: 12px;

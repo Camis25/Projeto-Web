@@ -15,9 +15,6 @@ body {
       height: 100%;
 }
  
-
-
-
 .section1{
    background-image: url('./../img/Comunidade.png');
    background-size: cover;
@@ -25,7 +22,6 @@ body {
    height: 60vh;
    margin: 0;
 }
-
 
 
  .filtro{
@@ -55,18 +51,29 @@ body {
     
  }
  
-.section2 {
+ .section2{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #ffffff;
-    width: 100%;
+    flex-direction: column;
+    background-color: #ffff;
     height: auto;
-    padding: 2em;
+    
+    h1{
+        font-size: 30px;
+        margin: 1.5em;
+        color: #843e3e;
+
+    }
+ }
+
+ .section2-cards-comunidade {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    padding: 20px;
 }
 
-
-.comentario-favorito {
+.card-comentario {
     background-color: #b95959;
     color: #fff;
     width: 500px;
@@ -78,31 +85,18 @@ body {
     word-wrap: break-word;
 }
 
-.comentario-favorito:hover {
-   transform: scale(1.05);
-   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
- }
 
-.section2-cards-comunidade {
-  display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1em;
-    padding: 20px;
+.card-comentario:hover {
+       background-color: #9c4949;
+
 }
-
-    
-
-.user-name{
+.user-name {
     font-weight: bold;
     margin-bottom: 5px;
+}
+
+.data-comentario {
+    font-size: 0.8em;
+    color: #ccc;
     margin-top: 10px;
 }
-
-
-.data{
-   font-size: 0.8em;
-    color: #ccc;
-    margin-top: 15px;
-}
-

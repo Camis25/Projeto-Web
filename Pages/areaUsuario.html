@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./../Assets/CSS/areaUsuario.css">
     <link rel="stylesheet" href="./../Assets/CSS/headerArea.css">
-
-
-    <title>Document</title>
+    <link class="logo" rel="icon" href="../Assets/img/Bem - Estar.png">
+    <title>Perfil</title>
 </head>
 
 <body>
@@ -22,6 +21,7 @@
             <li><a href="./areaUsuario.html">Perfil</a></li>
             <li><a href="./artigosUser.html">Artigos</a></li>
             <li><a href="./comunidadeUser.html">Comunidade</a></li>
+            <li><a href="./cicloMenstrual.html">Calculadora</a></li>
             <li><a onclick="logoutUsuario()">Sair</a></li>
 
         </ul>
@@ -29,45 +29,44 @@
     </nav>
 
     <section>
-        <div class="areaUsuario">
-            <div class="titulo-user">
-                <div class="titulo">
+         <div class="titulo">
                     <h1>Dados Pessoais</h1>
                 </div>
+        <div class="areaUsuario">
+            <div class="titulo-user">
+               
                 <div class="user">
                     <img id="random-photo" alt="Foto aleatória do Unsplash" style="width: 300px; height: auto;">
-
                     <p>Meu usuário</p>
                 </div>
+        </div>
 
+
+        <div>
+            <div class="dados">
+                <p>Username</p>
+                <p>-</p>
             </div>
 
-
-            <div>
-                <div class="dados">
-                    <p>Username</p>
-                    <p>-</p>
-                </div>
-
-                <div class="dados">
-                    <p>E-mail</p>
-                    <p>-</p>
-                </div>
+            <div class="dados">
+                <p>E-mail</p>
+                <p>-</p>
             </div>
+        </div>
 
-            <div>
-                <div class="dados">
-                    <p>Data de Nascimento</p>
-                    <p>-</p>
-                </div>
-                <div class="dados">
-                    <button onclick="editar()">Editar</button>
-                </div>
+        <div>
+            <div class="dados">
+                <p>Data de Nascimento</p>
+                 <p>-</p>
             </div>
+        
+            <div class="dados">
+                <button onclick="editar()">Editar</button>
+            </div>
+         </div>
 
     </section>
-<script src="../Assets/JavaScript/script.js"></script>
-<script src="../Assets/JavaScript/scriptUser.js"></script>
+    <script src="../Assets/JavaScript/scriptUser.js"></script>
 
 </body>
 

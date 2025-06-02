@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./../Assets/CSS/login.css">
-
+    <link rel="stylesheet" href="./../Assets/CSS/cadastroUser.css">
+    <link class="logo" rel="icon" href="../Assets/img/Bem - Estar.png">
     <title>Cadastro usuário</title>
 </head>
 <body> 
@@ -30,19 +30,18 @@
                     <input placeholder="Senha" type="password" id="txtSenha" name="txtSenha" required>
                     <i class="bx bxs-lock alt"></i>
                 </div>
-                 <div>
-                    <p>Palavra-chave para recuperação de senha</p>
+                 <div class="msg-span">
+                      <span class="tooltip-text">Palavra-chave para recuperação de senha</span>
                     <input placeholder="Palavra-chave" type="text" id="txtChave" name="txtChave"  required>
-                    <i class="bx bxs-user"></i>
+                    <i class="bx bxs-key"></i>
+                </div>
+                <div class="teste">
+                    <label><input type="checkbox" id="aceiteTermos" /> </label>
+                    <p class="p-termos">Eu aceito os <a href="./termos.html">Termos de Uso</a> e a <a href="./politicaPrivacidade.html">Política de Privacidade</a></p>
+                   
                 </div>
                 <button onclick="cadastroUsuario()" type="button" id="btnEnviar">Cadastrar</button>
             </form>
-
-            <label>
-        <input type="checkbox" id="aceiteTermos" />
-        Eu aceito os Termos de Uso e a Política de Privacidade
-    </label>
-           
         </div>
     </div>
     <script src="./../Assets/JavaScript/scriptUser.js"></script>

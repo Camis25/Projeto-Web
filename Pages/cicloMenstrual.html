@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../Assets/CSS/cicloMenstrual.css">
+    <link rel="stylesheet" href="./../Assets/CSS/headerArea.css">
+    <link class="logo" rel="icon" href="../Assets/img/Bem - Estar.png">
+    <title>Ciclo Menstrual</title>
+</head>
+
+<body>
+    <div id="header"></div>
+    
+    <nav class="navbar-header">
+        <img class="logo-head" src="../Assets/img/Bem - Estar.png">
+
+        <ul>
+            <li><a href="./areaUsuario.html">Perfil</a></li>
+            <li><a href="./artigosUser.html">Artigos</a></li>
+            <li><a href="./comunidadeUser.html">Comunidade</a></li>
+            <li><a href="./cicloMenstrual.html">Calculadora</a></li>
+            <li><a onclick="logoutUsuario()">Sair</a></li>
+
+        </ul>
+
+    </nav>
+    <div class="box">
+        <h2>Calculadora de Ciclo Menstrual</h2>
+
+            <label for="data">Data da última menstruação:</label>
+            <input type="date" id="data" />
+
+            <label for="ciclo">Duração média do ciclo (em dias):</label>
+            <input type="number" id="ciclo" value="28" />
+
+            <button onclick="calcular()">Calcular</button>
+
+            <div id="resultado" class="resultado" style="display:none;"></div>
+
+
+    </div>
+    
+   <script>
+    
+    function calcularCicloMenstrual(dataUltimaMenstruacao, duracaoCiclo = 28) {
+        const dataUltima = new Date(dataUltimaMenstruacao);
+
+        if (isNaN(dataUltima)) {
+            return { erro: "Data inválida" };
+        }
+
+        const proximaMenstruacao = new Date(dataUltima);
+        proximaMenstruacao.setDate(proximaMenstruacao.getDate() + duracaoCiclo);
+
+        const dataOvulacao = new Date(dataUltima);
+        dataOvulacao.setDate(dataOvulacao.getDate() + 14);
+
+        const inicioFertil = new Date(dataUltima);
+        inicioFertil.setDate(inicioFertil.getDate() + 11);
+
+        const fimFertil = new Date(dataUltima);
+        fimFertil.setDate(fimFertil.getDate() + 17);
+
+        const formatar = (data) => data.toLocaleDateString('pt-BR');
+
+        return {
+            proximaMenstruacao: formatar(proximaMenstruacao),
+            dataOvulacao: formatar(dataOvulacao),
+            inicioFertil: formatar(inicioFertil),
+            fimFertil: formatar(fimFertil)
+        };
+    }
+
+    function calcular() {
+        const data = document.getElementById("data").value;
+        const ciclo = parseInt(document.getElementById("ciclo").value, 10);
+
+        const resultado = calcularCicloMenstrual(data, ciclo);
+
+        const divResultado = document.getElementById("resultado");
+
+        if (resultado.erro) {
+            divResultado.innerHTML = `<p style="color:red;">${resultado.erro}</p>`;
+        } else {
+            divResultado.innerHTML = `
+                <h3>Resultado:</h3>
+                <p><strong>Próxima menstruação:</strong> ${resultado.proximaMenstruacao}</p>
+                <p><strong>Ovulação:</strong> ${resultado.dataOvulacao}</p>
+                <p><strong>Período fértil:</strong> ${resultado.inicioFertil} até ${resultado.fimFertil}</p>
+            `;
+        }
+
+        divResultado.style.display = "block";
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const hoje = new Date().toISOString().split("T")[0];
+        document.getElementById("data").setAttribute("max", hoje);
+    });
+
+
+    </script>
+
+</body>
+</html>

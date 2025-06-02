@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+       font-family: "Poppins", serif;
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    background-image: url('./../img/fundoMulheres.jpg');
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+
+}
+
+h1{
+    margin-bottom: 1em;
+}
+
+
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.formulario form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 4em;
+    border-radius: 2em;
+    gap: 1em;
+
+
+}
+
+.tela-login{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    color: rgb(27, 8, 8);
+}
+
+h1{
+    color: #A53860;
+}
+
+input{
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #DA627D;
+}
+
+i{
+    color: #DA627D;
+}
+
+button{
+    background-color: #DA627D;
+    padding: 0.5em 3em;
+    color: #ffffff;
+    border: none;
+    font-size: 1em;
+    border-radius: 30px;
+}
+
+button:hover {
+   transform: scale(1.05);
+   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    cursor: pointer;
+ }
+
+a{
+    text-decoration: none;
+    color: #A53860;
+
+ }
+
+ input[type="date"] {
+    color: rgb(110, 110, 110);
+    width: 190px;
+    
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(44%) sepia(91%) saturate(452%) hue-rotate(305deg) brightness(90%) contrast(90%);
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+
+  p{
+    text-align:start;
+    font-size: 10px;
+    width: 190px;
+    margin: 5px;
+    color: #747171;
+  }
+
+.teste{
+    display: flex;
+    flex-direction: row;
+}
+  .aceitarTermos{
+    border: 1px solid black;
+  }
+
+  .p-termos{
+    position: relative;
+    bottom: 5px;
+    font-size: 12px;
+    width: 200px;
+  }
+
+
+  .msg-span {
+  position: relative;
+  display: inline-block;
+}
+
+
+span {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 6px 8px;
+  position: absolute;
+  z-index: 1;
+  bottom: 105%; 
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  width: max-content;
+  max-width: 200px;
+  font-size: 12px;
+}
+
+.msg-span:hover span {
+  visibility: visible;
+  opacity: 1;
+}
+

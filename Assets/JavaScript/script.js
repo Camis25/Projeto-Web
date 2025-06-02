@@ -20,8 +20,15 @@ function loginMedica() {
     const email = document.getElementById("email").value.trim();
     const senhaInput = document.getElementById("senha").value;
 
+    const emailFixo = "anaClara@bemestar.com";
+
     if (!email || !senhaInput) {
         alert("Preencha todos os campos");
+        return;
+    }
+
+    if (email !== emailFixo) {
+        alert("Apenas a médica autorizada pode acessar esta área.");
         return;
     }
 
@@ -39,6 +46,31 @@ function loginMedica() {
         window.location.href = "perfilMedica.html";
     } else {
         alert("E-mail ou senha incorretos.");
+    }
+}
+
+function logoutMedica() {
+    localStorage.removeItem("medicoLogado");
+    alert("Logout realizado com sucesso!");
+    window.location.href = "loginMedica.html";
+}
+
+function verificarLoginMedica() {
+    const medicoLogado = localStorage.getItem("medicoLogado");
+    const paginaAtual = window.location.pathname.split("/").pop();
+
+    if (!medicoLogado && paginaAtual !== "loginMedica.html") {
+        alert("Você precisa estar logada para acessar esta página.");
+        window.location.href = "loginMedica.html";
+    }
+}
+
+function redirecionarSeLogadaNaPaginaDeLogin() {
+    const medicoLogado = localStorage.getItem("medicoLogado");
+    const paginaAtual = window.location.pathname.split("/").pop();
+
+    if (medicoLogado && paginaAtual === "loginMedica.html") {
+        window.location.href = "perfilMedica.html";
     }
 }
 
@@ -71,6 +103,9 @@ function carregarDadosMedica() {
 
 document.addEventListener("DOMContentLoaded", function () {
     criarUsuarioFixo();
+
+    redirecionarSeLogadaNaPaginaDeLogin(); 
+    verificarLoginMedica(); 
 
     const form = document.getElementById("formArtigo");
     if (form) {

@@ -41,15 +41,5 @@ function salvarNoStorage(titulo, conteudo, imagemBase64, tema) {
 
     alert("Artigo salvo com sucesso!");
     document.getElementById("formArtigo").reset();
-    listarArtigos();
+    window.location.href = "artigosMedica.html";
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("formArtigo");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault(); 
-      salvarArtigo();     
-    });
-  }
-});

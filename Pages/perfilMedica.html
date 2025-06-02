@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./../Assets/CSS/areaUsuario.css">
     <link rel="stylesheet" href="./../Assets/CSS/headerArea.css">
-
-
-    <title>Document</title>
+    <link class="logo" rel="icon" href="../Assets/img/Bem - Estar.png">
+    <title>Perfil Médica</title>
 </head>
 
 <body>
@@ -22,56 +21,52 @@
             <li><a href="./perfilMedica.html">Perfil</a></li>
             <li><a href="./artigosMedica.html">Meus Artigos</a></li>
             <li><a href="./comunidadeMedica.html">Comunidade</a></li>
-            <li><a href="/index.html">Sair</a></li>
+            <li><a onclick="logoutMedica()" href="/index.html">Sair</a></li>
 
         </ul>
 
     </nav>
 
     <section>
-        <div class="areaUsuario">
-            <div class="titulo-user">
-                <div class="titulo">
+        <div class="titulo">
                     <h1>Dados Pessoais</h1>
                 </div>
+        <div class="areaUsuario">
+            <div class="titulo-user">
                 <div class="user">
                     <img class="medica" id="fotoPerfil" alt="Foto da médica" style="width: 200px; border-radius: 50%;">
-
-                    <p>Meu usuário</p>
-                </div>
-
-            </div>
-
-
-            <div>
-                <div class="dados">
-                    <p>Nome</p>
-                    <p id="nomeMedica"></p>
-                </div>
-
-                <div class="dados">
-                    <p>E-mail</p>
-                    <p id="emailMedica"></p>
                 </div>
             </div>
 
-            <div>
-                <div class="dados">
-                    <p>Data de Nascimento</p>
+
+        <div>
+            <div class="dados">
+                <p class="title">Nome</p>
+                <p id="nomeMedica"></p>
+            </div>
+
+            <div class="dados">
+                <p class="title">E-mail</p>
+                <p id="emailMedica"></p>
+            </div>
+        </div>
+
+        <div>
+            <div class="dados">
+                    <p class="title">Data de Nascimento</p>
                     <p id="nascMedica"></p>
-                </div>
-
-                <div class="dados">
-                    <p>CRM</p>
-                    <p id="CRM"></p>
-                </div>
             </div>
+
+            <div class="dados">
+                <p class="title">CRM</p>
+                <p id="CRM"></p>
+            </div>
+        </div>
 
     </section>
-<script src="./../Assets/JavaScript/script.js"></script>
-<script>
-    window.addEventListener("DOMContentLoaded", carregarDadosMedica);
-</script>
-</body>
-
+    <script src="./../Assets/JavaScript/script.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", carregarDadosMedica);
+    </script>
+    </body>
 </html>

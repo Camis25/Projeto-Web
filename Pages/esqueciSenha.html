@@ -1,27 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="././Assets/CSS/esqueciSenha.css">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../Assets/CSS/esqueciSenha.css" />
+    <link class="logo" rel="icon" href="../Assets/img/Bem - Estar.png">
+  <title>Esqueci a Senha</title>
 </head>
 <body>
-    <form>
-        <div class="inputs">
-            <div>
-                <label>E-mail</label>
-                <input>
-            </div>
-            <div>
-                <label>Nova senha</label>
-                <input>
-            </div>
-            <div>
-                <label>Confirmar senha</label>
-                <input>
-            </div>
-        </div>
-    </form>
+  <form id="resetForm">
+    <div class="inputs">
+      <h1>Nova Senha</h1>
+      <div>
+        <input id="email" name="email" type="email" placeholder="E-mail" required />
+      </div>
+      <div>
+        <input id="chave" name="chave" type="text" placeholder="Chave" required />
+      </div>
+      <div>
+        <input id="novaSenha" name="novaSenha" type="password" placeholder="Senha" required />
+      </div>
+      <button type="submit">Redefinir Senha</button>
+    </div>
+  </form>
+
+  <script>
+    function trocarSenha() {
+      const emailInput = document.getElementById("email");
+      const chaveInput = document.getElementById("chave");
+      const novaSenhaInput = document.getElementById("novaSenha");
+
+      const email = emailInput.value.trim();
+      const chave = chaveInput.value.trim();
+      const novaSenha = novaSenhaInput.value;
+
+      if (!email || !chave || !novaSenha) {
+        alert("Preencha todos os campos: e-mail, chave e nova senha.");
+        if (!email) {
+          emailInput.focus();
+        } else if (!chave) {
+          chaveInput.focus();
+        } else {
+          novaSenhaInput.focus();
+        }
+        return;
+      }
+
+      if (novaSenha.length !== 8) {
+        alert("A nova senha deve conter exatamente 8 caracteres.");
+        novaSenhaInput.focus();
+        return;
+      }
+
+      const dadosUsuario = localStorage.getItem(email);
+      if (!dadosUsuario) {
+        alert("Usuário não encontrado.");
+        emailInput.focus();
+        return;
+      }
+
+      const usuario = JSON.parse(dadosUsuario);
+
+      if (usuario.chave !== chave) {
+        alert("Chave incorreta.");
+        chaveInput.focus();
+        return;
+      }
+
+      usuario.senha = novaSenha;
+      localStorage.setItem(email, JSON.stringify(usuario));
+
+      alert("Senha alterada com sucesso!");
+
+      // Redirecionamento condicional:
+      if (email.toLowerCase() === "anaclara@bemestar.com") {
+        window.location.href = "loginMedica.html";
+      } else {
+        window.location.href = "login.html";
+      }
+    }
+
+    document.getElementById("resetForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      trocarSenha();
+    });
+  </script>
 </body>
 </html>

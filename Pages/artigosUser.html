@@ -3,56 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../Assets/CSS/artigos.css">
-    <link rel="stylesheet" href="./../Assets/CSS/headerArea.css">
-
-    <title>Document</title>
+    <link rel="stylesheet" href="../Assets/CSS/artigos.css">
+    <link  rel="stylesheet" href="../Assets/CSS/headerArea.css">
+    <link  rel="stylesheet" href="../Assets/CSS/navbar_footer.css">
+    <link class="logo" rel="icon" href="../Assets/img/Bem - Estar.png">
+    <title>Artigos</title>
 </head>
 <body>
-    <div id="header"></div>
     
-     <nav class="navbar-header">
+   
+     <div id="header"></div>
+    <nav class="navbar-header">
         <img class="logo-head" src="../Assets/img/Bem - Estar.png">
 
         <ul>
             <li><a href="./areaUsuario.html">Perfil</a></li>
-            <li><a href="./areaUsuario.html">Meus Artigos</a></li>
+            <li><a href="./artigosUser.html">Artigos</a></li>
             <li><a href="./comunidadeUser.html">Comunidade</a></li>
+            <li><a href="./cicloMenstrual.html">Calculadora</a></li>
             <li><a onclick="logoutUsuario()">Sair</a></li>
 
         </ul>
 
     </nav>
-
-
+    
     <section class="section1"></section>
+
+        
+    </div>
 
     <section class="section2">
         <div class="filtro">
-            <h1>Filtar por tema:</h1>
+            <h1 class="h1-filtrar">Filtar por tema:</h1>
         <select id="tema" name="tema" onchange="filtrarPorTema()">
-            <option value="" disabled selected>Selecione um tema</option>
-            <option value="alimentacao">Alimentação Saudável</option>
-            <option value="exercicio">Exercícios Físicos</option>
-            <option value="saude_mental">Saúde Mental</option>
-            <option value="sono">Qualidade do Sono</option>
-            <option value="meditacao">Meditação e Relaxamento</option>
-            <option value="higiene">Higiene Pessoal</option>
-            <option value="prevenção">Prevenção de Doenças</option>
-            <option value="nutricao">Nutrição e Suplementos</option>
-            <option value="gestao_stress">Gestão do Estresse</option>
-            <option value="saude_emocional">Saúde Emocional</option>
+            <option value="">Selecione um tema</option>
+            <option value="Alimentação Saudável">Alimentação Saudável</option>
+            <option value="Exercícios Físicos">Exercícios Físicos</option>
+            <option value="Saúde Mental">Saúde Mental</option>
+            <option value="Qualidade do Sono">Qualidade do Sono</option>
+            <option value="Meditação e Relaxamento">Meditação e Relaxamento</option>
+            <option value="Higiene Pessoal">Higiene Pessoal</option>
+            <option value="Prevenção de Doenças">Prevenção de Doenças</option>
+            <option value="Nutrição e Suplementos">Nutrição e Suplementos</option>
+            <option value="Gestão do Estresse">Gestão do Estresse</option>
+            <option value="Saúde Emocional">Saúde Emocional</option>
         </select><br><br>
         </div>
-    <section class="section2-cards"></section>
+            <section class="section2-cards"></section>
+       
+        </div>
 
-   
-</div>
-    <div id="footer"></div>
+    </section>
+    <footer class="rodape">
+    <div>
+        <h1>Acesso rápido</h1>
+        <p><a href="./artigos.html">Artigos</a></p>
+        <p><a href="./comunidade.html">Comunidade</a></p>
+    </div>
 
-    <script src="../Assets/JavaScript/scriptUser.js"></script>
-    
+    <div class="copy">
+        <img src="../Assets/img/Bem - Estar.png">
+         &copy; Todos os direitos reservados.
+    </div>
 
-    
+    <div>
+        <p><a href="./politicaPrivacidade.html">Política de Privacidade</a></p>
+        <p><a href="./termos.html">Termos e Condições</a></p>
+    </div>
+    </footer>
+
+        <script src="../Assets/JavaScript/scriptUser.js"></script>
+
 </body>
 </html>

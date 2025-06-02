@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./../Assets/CSS/areaUsuario.css">
     <link rel="stylesheet" href="./../Assets/CSS/headerArea.css">
-
-
-    <title>Document</title>
+    <link class="logo" rel="icon" href="../Assets/img/Bem - Estar.png">
+    <title>Editar Perfil</title>
 </head>
 
 <body>
@@ -22,22 +21,24 @@
             <li><a href="./areaUsuario.html">Perfil</a></li>
             <li><a href="./artigosUser.html">Artigos</a></li>
             <li><a href="./comunidadeUser.html">Comunidade</a></li>
-            <li><a href="/index.html">Sair</a></li>
+            <li><a href="./cicloMenstrual.html">Calculadora</a></li>
+            <li><a onclick="logoutUsuario()">Sair</a></li>
 
         </ul>
 
     </nav>
 
+  
+
     <section>
+           <div class="titulo">
+                    <h1>Dados Pessoais</h1>
+            </div>
         <div class="areaUsuario">
             <div class="titulo-user">
-                <div class="titulo">
-                    <h1>Dados Pessoais</h1>
-                </div>
+               
                 <div class="user">
                     <img id="random-photo" alt="Foto aleatória do Unsplash" style="width: 300px; height: auto;">
-
-                    <p>Meu usuário</p>
                 </div>
 
             </div>
@@ -51,7 +52,7 @@
 
                 <div class="dados">
                     <p>E-mail</p>
-                    <input type="email" id="email">
+                    <input type="email" id="email" disabled>
                 </div>
             </div>
 
@@ -60,12 +61,13 @@
                     <p>Data de Nascimento</p>
                     <input type="date" id="nascimento">
                 </div>
+                <div class="dados">
+                    <button onclick="salvarEdicao()">Salvar alterações</button>
+                </div>
             </div>
-            <button onclick="salvarEdicao()">Salvar alterações</button>
 
 
     </section>
-<script src="../Assets/JavaScript/script.js"></script>
 <script src="../Assets/JavaScript/scriptUser.js"></script>
 
 </body>

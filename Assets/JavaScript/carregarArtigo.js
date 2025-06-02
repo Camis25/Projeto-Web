@@ -1,107 +1,3 @@
-
-
-function listarArtigos(filtroTema = "") {
-    const container = document.querySelector(".section2-cards");
-    const artigos = JSON.parse(localStorage.getItem("artigos")) || [];
-
-    const artigosFiltrados = filtroTema
-        ? artigos.filter(artigo => artigo.tema === filtroTema)
-        : artigos;
-
-    if (artigosFiltrados.length === 0) {
-        container.innerHTML = `<p>Nenhum artigo disponível.</p>`;
-        return;
-    }
-
-    container.innerHTML = "";
-
-    artigosFiltrados.forEach((artigo, index) => {
-        const card = document.createElement("div");
-        card.classList.add("card-1");
-
-        card.innerHTML = `
-            <img class="img-cards" src="${artigo.imagem || './Assets/img/placeholder.jpg'}" alt="Imagem do artigo" />
-            <div class="info-cards">
-                <h2>${artigo.titulo}</h2>
-                <p class="data-artigo">${artigo.data}</p>
-                <div class="botoes">
-                    <button class="btn-card" onclick="abrirArtigo(${artigo.id})">Leia mais</button>
-                    <button class="btn-edit" onclick="editarArtigo(${index})">Editar</button>
-                    <button  class="btn-excluir" onclick="excluirArtigo(${index})">Excluir</button>
-                </div>
-            </div>
-        `;
-
-        container.appendChild(card);
-    });
-}
-
-function favoritarComentario(comentarioIndex) {
-    const artigoId = localStorage.getItem("artigoSelecionadoId");
-    const comentariosKey = `comentarios_artigo_${artigoId}`;
-    const favoritosKey = "comentariosFavoritos";
-
-    // Carrega os comentários e favoritos do localStorage
-    const comentarios = JSON.parse(localStorage.getItem(comentariosKey)) || [];
-    const favoritos = JSON.parse(localStorage.getItem(favoritosKey)) || [];
-
-    // Verifica se o comentário existe
-    const comentario = comentarios[comentarioIndex];
-    if (!comentario) {
-        alert("Comentário não encontrado.");
-        return;
-    }
-
-    // Verifica se o comentário já está favoritado
-    const favoritoIndex = favoritos.findIndex(c =>
-        c.texto === comentario.texto &&
-        c.usuario === comentario.usuario &&
-        c.data === comentario.data &&
-        c.artigoId == artigoId
-    );
-
-    if (favoritoIndex !== -1) {
-        // Remove dos favoritos
-        favoritos.splice(favoritoIndex, 1);
-        localStorage.setItem(favoritosKey, JSON.stringify(favoritos));
-        alert("Comentário removido dos favoritos.");
-    } else {
-        // Adiciona aos favoritos
-        const artigos = JSON.parse(localStorage.getItem("artigos")) || [];
-        const artigo = artigos.find(art => art.id == artigoId);
-        favoritos.push({
-            ...comentario,
-            artigoId: artigoId,
-            artigoTitulo: artigo ? artigo.titulo : "Sem título"
-        });
-        localStorage.setItem(favoritosKey, JSON.stringify(favoritos));
-        alert("Comentário favoritado com sucesso!");
-    }
-
-    // Atualiza a lista de comentários para refletir o estado do botão
-    carregarComentarios();
-}
-
-
-function filtrarPorTema() {
-    const temaSelecionado = document.getElementById("tema").value;
-    listarArtigos(temaSelecionado);
-}
-
-function abrirArtigo(id) {
-    localStorage.setItem("artigoSelecionadoId", id);
-    window.location.href = "leituraArtigo.html";
-}
-
-function excluirArtigo(index) {
-    if (confirm("Tem certeza que deseja excluir este artigo?")) {
-        let artigos = JSON.parse(localStorage.getItem("artigos")) || [];
-        artigos.splice(index, 1);
-        localStorage.setItem("artigos", JSON.stringify(artigos));
-        listarArtigos(); 
-    }
-}
-
 function carregarArtigo() {
     const id = parseInt(localStorage.getItem("artigoSelecionadoId"), 10);
     const artigos = JSON.parse(localStorage.getItem("artigos")) || [];
@@ -144,7 +40,6 @@ function carregarComentarios() {
     }
 
     comentarios.forEach((comentario, idx) => {
-        // Verifica se o comentário está favoritado
         const isFavorito = favoritos.some(c =>
             c.texto === comentario.texto &&
             c.usuario === comentario.usuario &&
@@ -268,7 +163,7 @@ function carregarFavoritos() {
         return;
     }
 
-    container.innerHTML = ""; // Limpa antes de adicionar
+    container.innerHTML = ""; 
 
     favoritos.forEach((comentario, index) => {
         const div = document.createElement("div");
@@ -295,7 +190,7 @@ function desfavoritarComentario(index) {
     if (index >= 0 && index < favoritos.length) {
         favoritos.splice(index, 1);
         localStorage.setItem("comentariosFavoritos", JSON.stringify(favoritos));
-        carregarFavoritos(); // Atualiza a lista após remoção
+        carregarFavoritos(); 
         alert("Comentário removido dos favoritos.");
     }
 }
@@ -380,87 +275,4 @@ function verificarLoginComentario() {
             areaComentario.style.display = "block";
         }
     }
-}
-
-
-
-window.addEventListener("DOMContentLoaded", () => {
-
-    const selectTema = document.getElementById("tema");
-    if (selectTema) {
-        selectTema.selectedIndex = 0; // Reseta para a primeira opção
-    }
-    const isLeitura = document.getElementById("tituloArtigo");
-    const isLista = document.querySelector(".section2-cards");
-
-    if (isLeitura) {
-        carregarArtigo();
-        carregarComentarios();
-        verificarLoginComentario();
-    }
-
-    if (isLista) {
-        listarArtigos();
-    }
-});
-
-function escapeHTML(str) {
-    if (typeof str !== "string") return "";
-    const div = document.createElement("div");
-    div.textContent = str;
-    return div.innerHTML;
-}
-
-function limitarTexto(texto, limite) {
-    return texto.length > limite ? texto.slice(0, limite) + "..." : texto;
-}
-
-function listarTodosComentarios() {
-    const container = document.getElementById("comunidadeComentarios");
-    container.innerHTML = "";
-
-    const artigos = JSON.parse(localStorage.getItem("artigos")) || [];
-
-    if (!Array.isArray(artigos) || artigos.length === 0) {
-        container.innerHTML = "<p>Nenhum artigo encontrado.</p>";
-        return;
-    }
-
-    let comentariosEncontrados = false;
-
-    artigos.forEach(artigo => {
-        const comentariosKey = `comentarios_artigo_${artigo.id}`; 
-        const comentarios = JSON.parse(localStorage.getItem(comentariosKey)) || [];
-
-        comentarios.forEach(comentario => {
-            if (!comentario || !comentario.texto) return; 
-
-            comentariosEncontrados = true;
-            const div = document.createElement("div");
-            div.classList.add("card-comentario");
-
-            const usuario = escapeHTML(comentario.usuario || "Anônimo");
-            const texto = limitarTexto(escapeHTML(comentario.texto), 200);
-            const data = escapeHTML(comentario.data || "");
-            const titulo = escapeHTML(artigo.titulo || "Sem título");
-
-            div.innerHTML = `
-                <p class="user-name"><strong>${usuario}</strong></p>
-                <p><strong>Comentou no artigo:</strong> "${titulo}"</p>
-                <p>${texto}</p>
-                <p class="data-comentario"><small>${data}</small></p>
-            `;
-
-            container.appendChild(div);
-        });
-    });
-
-    if (!comentariosEncontrados) {
-        container.innerHTML = "<p>Nenhum comentário feito ainda.</p>";
-    }
-}
-
-window.addEventListener("DOMContentLoaded", listarTodosComentarios);
-function novoArtigo() {
-    window.location.href = "novoArtigo.html"; 
 }
