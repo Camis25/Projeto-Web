@@ -99,7 +99,19 @@ Ele foi desenvolvido como parte de um trabalho acadêmico para o curso de Análi
 
 ## 🔌 Integrações
 
-- API de frases motivacionais e curiosidades.
+### 🧠 API de Frases Motivacionais/Curiosidades
+
+O blog consome uma API com frases motivacionais ou curiosidades que são exibidas em diferentes partes da aplicação.
+
+### ▶️ Como ativar a API
+
+Para ativar o servidor da API local, siga os passos abaixo no terminal:
+
+```bash
+cd Assets
+cd JavaScript
+node app.js
+
 
 ---
 
