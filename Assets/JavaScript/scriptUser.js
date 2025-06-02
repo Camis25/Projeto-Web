@@ -52,7 +52,7 @@ function cadastroUsuario() {
     }
 
      if (localStorage.getItem(userName)) {
-        alert("Este e-mail já está cadastrado.");
+        alert("Este user já existe.");
         return;
     }
 
@@ -177,9 +177,9 @@ function carregarUsuarioParaEdicao() {
     document.getElementById("email").value = usuario.email || "";
     document.getElementById("nascimento").value = usuario.nasc || "";
 }
-
 function salvarEdicao() {
     const emailOriginal = localStorage.getItem("usuarioLogado");
+    const dadosAntigos = JSON.parse(localStorage.getItem(emailOriginal));
 
     const userName = document.getElementById("userName").value.trim();
     const email = document.getElementById("email").value.trim();
@@ -195,12 +195,29 @@ function salvarEdicao() {
         return;
     }
 
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+
+        if (
+            key === "usuarioLogado" ||
+            key.startsWith("comentarios_artigo_") ||
+            key === "medicoLogado" ||
+            key === "artigos" ||
+            key === "artigoSelecionado"
+        ) continue;
+
+        const usuario = JSON.parse(localStorage.getItem(key));
+
+        if (usuario.userName === userName && key !== emailOriginal) {
+            alert("Este nome de usuário já está em uso.");
+            return;
+        }
+    }
+
     if (email !== emailOriginal && localStorage.getItem(email)) {
         alert("Este e-mail já está cadastrado por outro usuário.");
         return;
     }
-
-    const dadosAntigos = JSON.parse(localStorage.getItem(emailOriginal));
 
     const novoUsuario = {
         userName,
@@ -336,7 +353,7 @@ window.addEventListener("DOMContentLoaded", listarComentariosUsuarioLogado);
 window.addEventListener("load", () => {
     const url = window.location.href;
 
-    if (url.includes("artigosUser.html") || url.includes("comunidadeUser.html")) {
+    if (url.includes("artigosUser.html") || url.includes("comunidadeUser.html") || url.includes("areaUsuario.html") || url.includes("editarPerfilUser.html") || url.includes("cicloMenstrual.html")  ) {
         verificarLogin();
     }
 

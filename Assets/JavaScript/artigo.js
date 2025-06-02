@@ -268,7 +268,7 @@ function carregarFavoritos() {
         return;
     }
 
-    container.innerHTML = ""; // Limpa antes de adicionar
+    container.innerHTML = ""; 
 
     favoritos.forEach((comentario, index) => {
         const div = document.createElement("div");
@@ -388,7 +388,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const selectTema = document.getElementById("tema");
     if (selectTema) {
-        selectTema.selectedIndex = 0; // Reseta para a primeira opção
+        selectTema.selectedIndex = 0; 
     }
     const isLeitura = document.getElementById("tituloArtigo");
     const isLista = document.querySelector(".section2-cards");
@@ -459,6 +459,20 @@ function listarTodosComentarios() {
         container.innerHTML = "<p>Nenhum comentário feito ainda.</p>";
     }
 }
+
+function redirecionarParaArtigos() {
+    const usuarioLogado = localStorage.getItem("usuarioLogado");
+    const medicoLogado = localStorage.getItem("medicoLogado");
+
+    if (usuarioLogado) {
+        window.location.href = "artigosUser.html";
+    } else if (medicoLogado) {
+        window.location.href = "artigosMedica.html";
+    } else {
+        window.location.href = "artigos.html";
+    }
+}
+
 
 window.addEventListener("DOMContentLoaded", listarTodosComentarios);
 function novoArtigo() {
