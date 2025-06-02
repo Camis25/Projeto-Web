@@ -110,7 +110,7 @@ Ele foi desenvolvido como parte de um trabalho acadêmico para o curso de Análi
 - JavaScript
 - LocalStorage
 - API pública (motivacional/curiosidades)
-- (Opcional: Frameworks como Angular, React, etc.)
+
 
 ---
 
