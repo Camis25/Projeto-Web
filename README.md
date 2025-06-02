@@ -110,6 +110,7 @@ Para ativar o servidor da API local, siga os passos abaixo no terminal:
 cd Assets
 cd JavaScript
 node app.js
+=======
 
 ---
 
@@ -120,7 +121,7 @@ node app.js
 - JavaScript
 - LocalStorage
 - API pública (motivacional/curiosidades)
-- (Opcional: Frameworks como Angular, React, etc.)
+
 
 ---
 
