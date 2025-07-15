@@ -54,7 +54,7 @@ Ele foi desenvolvido como parte de um trabalho acadêmico para o curso de Análi
 - Link para login como médica.
 
 ### 🔐 Login como Médica
-- Email: `DrAnaSilva@gmail.com`
+- Email: `anaClara@bemestar.com`
 - Senha: `admin@123`
 
 ### 🔁 Recuperar Senha
